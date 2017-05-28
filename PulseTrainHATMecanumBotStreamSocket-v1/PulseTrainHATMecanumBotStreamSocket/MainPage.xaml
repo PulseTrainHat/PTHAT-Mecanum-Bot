@@ -1,0 +1,65 @@
+﻿<Page
+    x:Class="PulseTrainHATMecanumBotStreamSocket.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PulseTrainHATMecanumBotStreamSocket"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Height="764" Width="1024">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0">
+        <TextBlock x:Name="txbIp" HorizontalAlignment="Left" Margin="33,174,0,0" TextWrapping="Wrap" Text="IP:" VerticalAlignment="Top" RenderTransformOrigin="1,1.2"/>
+        <TextBox x:Name="txtIp" HorizontalAlignment="Left" Margin="65,169,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="20" Width="148"/>
+        <TextBlock x:Name="txbPort" HorizontalAlignment="Left" Margin="218,174,0,0" TextWrapping="Wrap" Text="Port:" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPort" HorizontalAlignment="Left" Margin="253,169,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="117"/>
+        <TextBlock x:Name="txbMessage" HorizontalAlignment="Left" Margin="33,221,0,0" TextWrapping="Wrap" Text="Message:" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtMessage" Margin="33,246,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="111" HorizontalAlignment="Left" Width="457"/>
+        <Button x:Name="btnSend" Content="Send" HorizontalAlignment="Left" Margin="393,362,0,370" VerticalAlignment="Stretch" Click="btnSend_Click" d:LayoutOverrides="Height, TopPosition, BottomPosition" Width="97"/>
+        <Button x:Name="btnConnect" Content="Connect to pi" HorizontalAlignment="Left" Margin="375,168,0,0" VerticalAlignment="Top" Click="btnConnect_Click" Background="#333AFF00" Width="115"/>
+        <Button x:Name="Connect_Controller" Content="Connect to controller" HorizontalAlignment="Left" Margin="819,169,0,0" VerticalAlignment="Top" Click="Connect_Controller_Click" Width="172" Background="#3346FF00"/>
+        <Image x:Name="Jxl" HorizontalAlignment="Left" Margin="649,356,0,348" Width="60" Source="Assets/Left.png" d:LayoutOverrides="TopPosition, BottomPosition"/>
+        <Image x:Name="Jxr" Margin="789,356,0,348" Source="Assets/Right.png" HorizontalAlignment="Left" Width="60" d:LayoutOverrides="TopPosition, BottomPosition"/>
+        <Image x:Name="Jyb" Margin="719,426,0,0" Source="Assets/Down.png" HorizontalAlignment="Left" Width="60" RenderTransformOrigin="0.55,1.45" Height="60" VerticalAlignment="Top"/>
+        <Image x:Name="Jyf" Margin="719,286,0,0" Source="Assets/Up.png" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Width="60" d:LayoutOverrides="VerticalAlignment"/>
+        <Image x:Name="Jzd" HorizontalAlignment="Left" Margin="754,221,0,0" Width="60" Source="Assets/cwU.png" Height="60" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment"/>
+        <Image x:Name="Jzu" HorizontalAlignment="Left" Margin="689,221,0,0" Width="60" Source="Assets/CCWU.png" Height="60" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment"/>
+        <Image x:Name="JDtr" Margin="789,286,0,0" Source="Assets/trU.png" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Width="60" d:LayoutOverrides="VerticalAlignment"/>
+        <Image x:Name="JDbr" Margin="789,426,0,0" Source="Assets/brU.png" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Width="60"/>
+        <Image x:Name="JDbl" Margin="649,426,0,0" Source="Assets/blU.png" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Width="60"/>
+        <Image x:Name="JDtl" Margin="649,286,0,0" Source="Assets/tlU.png" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Width="60" d:LayoutOverrides="VerticalAlignment"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="607,93,0,0" TextWrapping="Wrap" Text="Controller" VerticalAlignment="Top" FontSize="48"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="141,93,0,0" TextWrapping="Wrap" Text="Network" VerticalAlignment="Top" FontSize="48" d:LayoutOverrides="HorizontalAlignment"/>
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="96" Margin="105,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="723" FontFamily="Calibri" FontSize="36">
+            <Run Text="Raspberry PI Pulse Train "/>
+            <Run Text="Hat Mecanum Bot"/>
+            <Run Text=" Stream Socke"/>
+            <Run Text="t"/>
+        </TextBlock>
+        <Image x:Name="PTHAT" HorizontalAlignment="Left" Height="56" Margin="13,5,0,0" VerticalAlignment="Top" Width="77" Source="Assets/PTHATlogo.jpg"/>
+        <TextBlock Text="http://www.pthat.com" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="833,18,0,0" FontWeight="Bold" FontStyle="Italic"/>
+        <TextBox x:Name="tbConnected" HorizontalAlignment="Right" Margin="0,169,230,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="187"/>
+        <TextBlock x:Name="txbPort_Copy" HorizontalAlignment="Right" Margin="0,174,426,0" TextWrapping="Wrap" VerticalAlignment="Top">
+            <Run Text="Status"/>
+            <Run Text=":"/>
+        </TextBlock>
+        <TextBlock x:Name="textBlock1" Margin="13,406,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="206" HorizontalAlignment="Left" Width="585" FontSize="18">
+            <Run Text="1. Boot the Raspberry pi and launch the Pulse Train HAT Mecanum Bot Universal Windows Application."/>
+            <LineBreak/>
+            <Run/>
+            <LineBreak/>
+            <Run Text="2. Input the IP address of the Raspberry pi under "/>
+            <Run Text="N"/>
+            <Run Text="etwork and Click Connect"/>
+            <Run Text=" to pi"/>
+            <Run Text="."/>
+            <LineBreak/>
+            <Run/>
+            <LineBreak/>
+            <Run Text="3. "/>
+            <Run Text="Make sure the wireless controller is paired and then under Controller Click Connect to controller."/>
+        </TextBlock>
+        <TextBox x:Name="km" Margin="0,227,363,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="39" IsReadOnly="True" HorizontalAlignment="Right" Width="66" d:LayoutOverrides="VerticalAlignment"/>
+        <TextBlock x:Name="txbPort_Copy1" HorizontalAlignment="Right" Margin="0,246,433,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Km/h"/>
+
+    </Grid>
+</Page>
