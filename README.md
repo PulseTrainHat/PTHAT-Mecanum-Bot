@@ -1,6 +1,8 @@
 # PTHAT-Mecanum-Bot
 Pulse Train Hat Xbox Gamepad Mecanum Bot Example 
 
+![alt tag](https://i2.wp.com/pthat.com/wp-content/uploads/2017/05/P1020870.jpg)
+
 Pulse Train Hat for the Raspberry Pi
 
 Examples for the PTHAT http://www.pthat.com
